@@ -60,8 +60,7 @@ class Counter extends React.Component {
           type="addition"
           click={this.handleMathClick}
         />
-        <h1>Click Count:{this.state.count}</h1>
-        <h1>Result: {this.state.result}</h1>
+        <ResultPanel count={this.state.count} result={this.state.result} />
       </>
     );
   }
@@ -69,10 +68,22 @@ class Counter extends React.Component {
 
 const MathButton = (props) => {
   return (
-    <button onClick={() => props.click(props.type, props.number)}>
+    <button
+      onClick={function () {
+        props.click(props.type, props.number);
+      }}
+    >
       {props.name}
     </button>
   );
 };
 
+const ResultPanel = (props) => {
+  return (
+    <React.Fragment>
+      <h1> Click number:{props.count} </h1>
+      <h1>Result: {props.result}</h1>
+    </React.Fragment>
+  );
+};
 ReactDOM.render(<Counter />, document.getElementById("root"));
