@@ -1,0 +1,13 @@
+body {
+  margin: 20px;
+  font-family: roboto, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+h1 {
+  font-style: 30px;
+}
+button {
+  font-size: 24px;
+}
